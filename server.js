@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGODB_URI)
 
 app.post(
     '/contact',
-    // rateLimiter,
+    rateLimiter,
     [
         body('name').trim().isLength({ min: 2 }).withMessage('Name must be at least 2 characters'),
         body('email').isEmail().withMessage('Invalid email'),
