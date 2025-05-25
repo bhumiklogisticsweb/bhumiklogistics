@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin: '*',//'https://yourfrontenddomain.com', // Replace with your real GoDaddy domain
+  origin: 'https://www.bhumiklogistics.com',//'https://yourfrontenddomain.com', // Replace with your real GoDaddy domain
   methods: ['POST'],
 }));
 mongoose.connect(process.env.MONGODB_URI)
