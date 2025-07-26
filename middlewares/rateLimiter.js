@@ -1,14 +1,14 @@
 const ContactMessage = require('../models/ContactMessage');
 
 module.exports = async (req, res, next) => {
-  const ip = req.ip;
+  const email = req.body.email;
 
   const startOfDay = new Date();
   startOfDay.setUTCHours(0, 0, 0, 0); // midnight UTC
 
   try {
     const count = await ContactMessage.countDocuments({
-      ip,
+      email,
       createdAt: { $gte: startOfDay },
     });
 
